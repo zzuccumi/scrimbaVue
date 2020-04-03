@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <span v-if="seen">Now you see me</span>
+
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.text }}
+            </li>
+        </ol>
+
+        <div id="box01">
+            <span>
+                {{ btnMsg }}
+            </span>
+            <button v-on:click="reverseMsg">Reverse Message</button>
+        </div>
+
+        <div id="box02">
+            <span>
+                {{ btnMsg02 }}
+            </span>
+            <button v-on:click="reverseMsg02">Reverse Message</button>
+        </div>
+
+        <div id="box03">
+            <p>{{inputMsg}}</p>
+            <input type="text" v-model="inputMsg" placeholder="여기에 텍스트를 써주세요">
+        </div>
+
+        <div id="box04">
+            <ol>
+                <todo-item></todo-item>  
+                <todo-item></todo-item>  
+            </ol>
+        </div>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
